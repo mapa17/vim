@@ -3,6 +3,8 @@ vim
 
 Personal vim settings
 
+**Note** Vim < 7.4 will not use ~/.vim/vimrc without the link ``ln -s
+~/.vim/vimrc ~/.vimrc``
 Key Bindings
 ============
 
