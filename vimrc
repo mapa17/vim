@@ -30,9 +30,9 @@ inoremap <C-n> :nohl<CR>
 
 
 " Quicksave command
-noremap <C-Z> :update<CR>
-vnoremap <C-Z> <C-C>:update<CR>
-inoremap <C-Z> <C-O>:update<CR>
+noremap <C-S> :update<CR>
+vnoremap <C-S> <C-C>:update<CR>
+inoremap <C-S> <C-O>:update<CR>
 
 
 " Quick quit command
@@ -202,3 +202,7 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 " wget -O ~/.vim/ftplugin/python_editing.vim http://www.vim.org/scripts/download_script.php?src_id=5492
 set nofoldenable
 set foldnestmax=2
+
+" Copy/Past current word
+nmap <leader>c :let @a=expand("<cword>")<CR>
+nmap <leader>v "ap

@@ -8,6 +8,9 @@ Personal vim settings
 Key Bindings
 ============
 
+###General Operation
+``Ctrl+s`` ... save file
+
 ###Movement
 ``gg`` ... First line
 
@@ -45,3 +48,8 @@ Key Bindings
 ``f`` ... fold
 
 ``F`` ... fold ALL
+
+###Text Operations
+
+``<leader>c`` ... copy current word
+``<leader>v`` ... past copied word
