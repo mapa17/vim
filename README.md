@@ -45,6 +45,16 @@ Key Bindings
 
 ``Ctrl+g`` ... go to Defintion
 
+``Ctrl+o`` ... go back to last position
+
+``Ctrl+i`` ... go forward in a position list
+
+``,+r`` ... refactor variable name
+
+``,+d`` ... run ./debug.sh script
+
+``,+b`` ... set breakepoint statement
+
 ``f`` ... fold
 
 ``F`` ... fold ALL

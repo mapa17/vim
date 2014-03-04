@@ -1,7 +1,6 @@
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
-
 " Better copy & paste
 " When you want to paste large blocks of code into vim, press F2 before you
 " paste. At the bottom you should see ``-- INSERT (paste) --``.
@@ -168,16 +167,19 @@ let g:pymode_lint_ignore = "E501, C0301"
 let g:pymode_virtualenv = 1
 " Use jedi doc
 let g:pymode_doc = 0
-
+let g:pymode_run = 0
+" let g:pymode_run_bind = '<leader>r'
+map <Leader>d :! ./debug.sh<CR>
 " Settings for jedi-vim
 " cd ~/.vim/bundle
 " git clone git://github.com/davidhalter/jedi-vim.git
 " let g:jedi#related_names_command = "<leader>z"
 " let g:jedi#goto_command = "<leader>g"  
-let g:jedi#get_definition_command = "<c-g>" 
+let g:jedi#goto_definitions_command = "<c-g>" 
 let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 1
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+let g:pymode_breakpoint = 0
+noremap <Leader>b Oimport pudb; pudb.set_trace() # SET BREAKEPOINT<C-c>
 
 " Better navigating through omnicomplete option list
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
@@ -204,5 +206,5 @@ set nofoldenable
 set foldnestmax=2
 
 " Copy/Past current word
-nmap <leader>c :let @a=expand("<cword>")<CR>
-nmap <leader>v "ap
+noremap <leader>c :let @a=expand("<cword>")<CR>
+noremap <leader>v "ap
