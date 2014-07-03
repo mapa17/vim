@@ -163,13 +163,13 @@ let g:pymode_lint_unmodified = 0
 let g:pymode_lint_message = 1
 let g:pymode_lint_checkers = ['pylint', 'pyflakes', 'pep8', 'mccabe']
 " Ignore long line warning
-let g:pymode_lint_ignore = "E501, C0301"
+let g:pymode_lint_ignore = "C0301,E501"
 let g:pymode_virtualenv = 1
 " Use jedi doc
 let g:pymode_doc = 0
 let g:pymode_run = 0
 " let g:pymode_run_bind = '<leader>r'
-map <Leader>d :! ./debug.sh<CR>
+map <Leader>d :! ../debug.sh<CR>
 " Settings for jedi-vim
 " cd ~/.vim/bundle
 " git clone git://github.com/davidhalter/jedi-vim.git
@@ -181,6 +181,7 @@ let g:jedi#popup_select_first = 1
 let g:pymode_breakpoint = 0
 noremap <Leader>b Oimport pudb; pudb.set_trace() # SET BREAKEPOINT<C-c>
 
+noremap <Leader>t :!nosetests --with-doctest --rednose -v<CR>
 " Better navigating through omnicomplete option list
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
 set completeopt=longest,menuone
@@ -208,3 +209,11 @@ set foldnestmax=2
 " Copy/Past current word
 noremap <leader>c :let @a=expand("<cword>")<CR>
 noremap <leader>v "ap
+
+" Set spellchecking to englisch
+set spell spelllang=en
+set sps=best,5
+hi SpellBad cterm=undercurl ctermbg=0 ctermfg=red
+hi SpellRar cterm=undercurl ctermbg=0 ctermfg=red
+hi SpellCap cterm=undercurl ctermbg=0 ctermfg=red
+map <leader>s :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR> 

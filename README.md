@@ -16,9 +16,9 @@ Key Bindings
 
 ``G`` ... Last Line
 
-``Ctrl+d`` ... page donw
+``Ctrl+d`` ... Page down
 
-``Ctrl+u`` ... page up
+``Ctrl+u`` ... Page up
 
 ``#`` ... eol
 
@@ -43,13 +43,13 @@ Key Bindings
 
 ``,+g`` ... go to
 
-``Ctrl+g`` ... go to Defintion
+``Ctrl+g`` ... go to Definition
 
 ``Ctrl+o`` ... go back to last position
 
 ``Ctrl+i`` ... go forward in a position list
 
-``,+r`` ... refactor variable name
+``,+r`` ... Redactor variable name
 
 ``,+d`` ... run ./debug.sh script
 
@@ -61,5 +61,12 @@ Key Bindings
 
 ###Text Operations
 
-``<leader>c`` ... copy current word
-``<leader>v`` ... past copied word
+``,c`` ... copy current word
+``,v`` ... past copied word
+``,s`` ... Spell Checker On/Off
+``z=`` ... see spell checker suggestions
+``zg`` ... add word to personal dictionary
+
+###CTRLP Mode###
+``Ctrl+T`` ... in new Tab
+``Ctrl+v`` ... in vertical split
