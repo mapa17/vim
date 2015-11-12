@@ -155,6 +155,8 @@ set wildignore+=*/coverage/*
 " "" let g:pymode_rope_goto_def_newwin = "vnew"
 " "" let g:pymode_rope_extended_complete = 1
 " "" let g:pymode_breakpoint = 0
+" Disable rope in pymode as we are going to use jedi_vim
+let g:pymode_rope = 0
 let g:pymode_syntax = 0
 let g:pymode_python = 'python'
 let g:pymode_lint = 1
@@ -175,13 +177,14 @@ map <Leader>d :! ../debug.sh<CR>
 " git clone git://github.com/davidhalter/jedi-vim.git
 " let g:jedi#related_names_command = "<leader>z"
 " let g:jedi#goto_command = "<leader>g"  
+let g:jedi#auto_initialization = 1
 let g:jedi#goto_definitions_command = "<c-g>" 
 let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 1
 let g:pymode_breakpoint = 0
 noremap <Leader>b Oimport pudb; pudb.set_trace() # SET BREAKEPOINT<C-c>
 
-noremap <Leader>t :!nosetests --with-doctest --rednose -v<CR>
+noremap <Leader>t :!nosetests *.py --with-doctest --rednose -v --doctest-options=+NORMALIZE_WHITESPACE<CR>
 " Better navigating through omnicomplete option list
 " See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
 set completeopt=longest,menuone
